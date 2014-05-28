@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+var steamcmd = require('../src/steamcmd')
+
+program
+  .option('-u, --username [value]', 'username')
+  .option('-p, --password [value]', 'password')
+  .option('--path [value]', 'path')
+  .option('--platform [value]', 'platform')
+  .parse(process.argv);
+
+var appIds = program.args;
+
+if (!appIds.length) {
+  console.error('app id required');
+  process.exit(1);
+}
+
+var appId = appIds[0];
+
+if (!program.path) {
+  program.path = process.cwd();
+}
+
+steamcmd.install(appId, program.path, program.username, program.password, program.platform);
