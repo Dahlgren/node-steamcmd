@@ -12,6 +12,8 @@
   "author": "Björn Dahlgren",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.2.0"
+    "commander": "^2.2.0",
+    "path-extra": "^0.3.0",
+    "tarball-extract": "0.0.3"
   }
 }
