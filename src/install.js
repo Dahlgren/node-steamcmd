@@ -9,7 +9,7 @@ function createArguments(appId, installPath, username, password, platform) {
   }
 
   // Use supplied password
-  arguments.push('+@NoPromptForPassword 0');
+  arguments.push('+@NoPromptForPassword 1');
 
   // Quit on fail
   arguments.push('+@ShutdownOnFailedCommand 1');
