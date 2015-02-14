@@ -24,4 +24,10 @@ if (!program.path) {
   program.path = process.cwd();
 }
 
-steamcmd.install(appId, program.path, program.username, program.password, program.platform);
+steamcmd.install({
+  applicationId: appId,
+  installPath: program.path,
+  username: program.username,
+  password: program.password,
+  platform: program.platform
+});

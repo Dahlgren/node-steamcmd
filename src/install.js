@@ -1,11 +1,11 @@
 var child_process = require('child_process');
 
-function createArguments(appId, installPath, username, password, platform) {
+function createArguments(options) {
   var arguments = [];
 
   // Force platform type for download
-  if (platform) {
-    arguments.push('+@sSteamCmdForcePlatformType ' + platform);
+  if (options.platform) {
+    arguments.push('+@sSteamCmdForcePlatformType ' + options.platform);
   }
 
   // Use supplied password
@@ -15,20 +15,20 @@ function createArguments(appId, installPath, username, password, platform) {
   arguments.push('+@ShutdownOnFailedCommand 1');
 
   // Authentication
-  if (username && password) {
-    arguments.push('+login ' + username + ' ' + password);
+  if (options.username && options.password) {
+    arguments.push('+login ' + options.username + ' ' + options.password);
   } else {
     arguments.push('+login anonymous');
   }
 
   // Installation directory
-  if (installPath) {
-    arguments.push('+force_install_dir "' + installPath + '"');
+  if (options.installPath) {
+    arguments.push('+force_install_dir "' + options.installPath + '"');
   }
 
   // App id to install and/or validate
-  if (appId) {
-    arguments.push('+app_update ' + appId + ' validate');
+  if (options.applicationId) {
+    arguments.push('+app_update ' + options.applicationId + ' validate');
   }
 
   // Quit when done
@@ -37,8 +37,8 @@ function createArguments(appId, installPath, username, password, platform) {
   return arguments;
 }
 
-function install(steamCmdPath, appId, installPath, username, password, platform) {
-  var process = child_process.execFile(steamCmdPath, createArguments(appId, installPath, username, password, platform));
+function install(steamCmdPath, options) {
+  var process = child_process.execFile(steamCmdPath, createArguments(options));
 
   process.stdout.on('data', function (data) {
     console.log('stdout: ' + data);
