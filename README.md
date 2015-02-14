@@ -39,9 +39,18 @@ Search for `query`, not yet implemented
 
 ## Module
 
-### install(appId, path, username, password, platform)
+### install(options)
 
-Install the specified `appId` to `path` using supplied `username` and `password`. If any of them are null then `anonymous` will be used as username. If `platform` is specified it will be used instead of the current OS platform.
+| Option | Description |
+| - | - |
+| applicationId | Application Id to install |
+| path | Path to application install directory |
+| password | Steam Account Password |
+| platform | Specific platform to install if other than current |
+| steamGuardCode | Code required for Steam Guard |
+| username | Steam Account Username |
+
+Install the specified `applicationId` to `path` using supplied `username` and `password`. If any of them are null then `anonymous` will be used as username. If `platform` is specified it will be used instead of the current OS platform. `steamGuardCode` is required for initial login if Steam Guard is enabled.
 
 # TODO
 

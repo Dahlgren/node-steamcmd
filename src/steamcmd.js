@@ -4,10 +4,10 @@ var download = require('./download');
 var env = require('./env');
 var install = require('./install');
 
-function steamCmdInstall(appId, path, username, password, platform) {
+function steamCmdInstall(options) {
   fs.exists(env.executable(), function (exists) {
     if (exists) {
-      install(env.executable(), appId, path, username, password, platform);
+      install(env.executable(), options);
     } else {
       console.log("SteamCmd needs to be installed");
       download(function (err) {
@@ -15,7 +15,7 @@ function steamCmdInstall(appId, path, username, password, platform) {
           console.err("Failed to install SteamCmd");
         } else {
           console.log("SteamCmd was installed");
-          install(env.executable(), appId, path, username, password, platform);
+          install(env.executable(), options);
         }
       });
     }
