@@ -5,11 +5,11 @@ var program = require('commander');
 var steamcmd = require('../src/steamcmd');
 
 program
-  .option('-u, --username [value]', 'username')
-  .option('-p, --password [value]', 'password')
-  .option('--path [value]', 'path')
-  .option('--platform [value]', 'platform')
-  .option('--steamGuardCode [value]', 'code for steam guard')
+  .option('-u, --username [value]', 'Steam Username')
+  .option('-p, --password [value]', 'Steam Password')
+  .option('--path [value]', 'Install Path instead of CWD')
+  .option('--platform [value]', 'Install application for specific OS')
+  .option('--steamGuardCode [value]', 'Code for steam guard')
   .parse(process.argv);
 
 var appIds = program.args;

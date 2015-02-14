@@ -33,11 +33,11 @@ Usage: steamcmd [options] [appid]
 Options:
 
   -h, --help                output usage information
-  -u, --username [value]    username
-  -p, --password [value]    password
-  --path [value]            path
-  --platform [value]        platform
-  --steamGuardCode [value]  code for steam guard
+  -u, --username [value]    Steam Username
+  -p, --password [value]    Steam Password
+  --path [value]            Install Path instead of CWD
+  --platform [value]        Install application for specific OS
+  --steamGuardCode [value]  Code for steam guard
 ```
 
 Install one application with desired app id. All app ids can be found at  https://developer.valvesoftware.com/wiki/Steam_Application_IDs
