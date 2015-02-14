@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "steamcmd": "./bin/steamcmd",
-    "steamcmd-install": "./bin/steamcmd-install"
+    "steamcmd": "./bin/steamcmd"
   },
   "keywords": [
     "steam"

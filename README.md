@@ -28,7 +28,7 @@ Commands are executed with current working directory as folder
 ### Install application
 
 ```
-Usage: steamcmd install [options] [appid]
+Usage: steamcmd [options] [appid]
 
 Options:
 
@@ -41,12 +41,6 @@ Options:
 ```
 
 Install one application with desired app id. All app ids can be found at  https://developer.valvesoftware.com/wiki/Steam_Application_IDs
-
-### Search applications
-
-`steamcmd search query`
-
-Search for `query`, not yet implemented
 
 ## Module
 
@@ -66,4 +60,3 @@ Install the specified `applicationId` to `path` using supplied `username` and `p
 # TODO
 
 * Callback on install
-* Search functionality

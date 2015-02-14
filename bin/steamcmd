@@ -2,8 +2,34 @@
 
 var program = require('commander');
 
+var steamcmd = require('../src/steamcmd');
+
 program
-  .version('0.0.1')
-  .command('install [app id]', 'install one or more applications')
-  .command('search [query]', 'search with optional query')
+  .option('-u, --username [value]', 'username')
+  .option('-p, --password [value]', 'password')
+  .option('--path [value]', 'path')
+  .option('--platform [value]', 'platform')
+  .option('--steamGuardCode [value]', 'code for steam guard')
   .parse(process.argv);
+
+var appIds = program.args;
+
+if (!appIds.length) {
+  console.error('app id required');
+  process.exit(1);
+}
+
+var appId = appIds[0];
+
+if (!program.path) {
+  program.path = process.cwd();
+}
+
+steamcmd.install({
+  applicationId: appId,
+  installPath: program.path,
+  username: program.username,
+  password: program.password,
+  platform: program.platform,
+  steamGuardCode: program.steamGuardCode,
+});
