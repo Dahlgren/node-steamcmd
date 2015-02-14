@@ -56,4 +56,3 @@ Install the specified `applicationId` to `path` using supplied `username` and `p
 
 * Callback on install
 * Search functionality
-* Windows support
