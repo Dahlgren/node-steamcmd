@@ -1,40 +1,40 @@
 var child_process = require('child_process');
 
 function createArguments(options) {
-  var arguments = [];
+  var args = [];
 
   // Force platform type for download
   if (options.platform) {
-    arguments.push('+@sSteamCmdForcePlatformType ' + options.platform);
+    args.push('+@sSteamCmdForcePlatformType ' + options.platform);
   }
 
   // Use supplied password
-  arguments.push('+@NoPromptForPassword 1');
+  args.push('+@NoPromptForPassword 1');
 
   // Quit on fail
-  arguments.push('+@ShutdownOnFailedCommand 1');
+  args.push('+@ShutdownOnFailedCommand 1');
 
   // Authentication
   if (options.username && options.password) {
-    arguments.push('+login ' + options.username + ' ' + options.password);
+    args.push('+login ' + options.username + ' ' + options.password);
   } else {
-    arguments.push('+login anonymous');
+    args.push('+login anonymous');
   }
 
   // Installation directory
   if (options.installPath) {
-    arguments.push('+force_install_dir "' + options.installPath + '"');
+    args.push('+force_install_dir "' + options.installPath + '"');
   }
 
   // App id to install and/or validate
   if (options.applicationId) {
-    arguments.push('+app_update ' + options.applicationId + ' validate');
+    args.push('+app_update ' + options.applicationId + ' validate');
   }
 
   // Quit when done
-  arguments.push('+quit');
+  args.push('+quit');
 
-  return arguments;
+  return args;
 }
 
 function install(steamCmdPath, options) {
