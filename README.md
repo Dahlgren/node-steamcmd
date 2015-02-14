@@ -27,7 +27,18 @@ Commands are executed with current working directory as folder
 
 ### Install application
 
-`steamcmd install appid`
+```
+Usage: steamcmd install [options] [appid]
+
+Options:
+
+  -h, --help                output usage information
+  -u, --username [value]    username
+  -p, --password [value]    password
+  --path [value]            path
+  --platform [value]        platform
+  --steamGuardCode [value]  code for steam guard
+```
 
 Install one application with desired app id. All app ids can be found at  https://developer.valvesoftware.com/wiki/Steam_Application_IDs
 
