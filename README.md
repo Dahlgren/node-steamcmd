@@ -42,7 +42,7 @@ Search for `query`, not yet implemented
 ### install(options)
 
 | Option | Description |
-| - | - |
+| --- | --- |
 | applicationId | Application Id to install |
 | path | Path to application install directory |
 | password | Steam Account Password |
