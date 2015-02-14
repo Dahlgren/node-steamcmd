@@ -14,6 +14,10 @@ function createArguments(options) {
   // Quit on fail
   args.push('+@ShutdownOnFailedCommand 1');
 
+  if (options.steamGuardCode) {
+    args.push('+set_steam_guard_code ' + options.steamGuardCode);
+  }
+
   // Authentication
   if (options.username && options.password) {
     args.push('+login ' + options.username + ' ' + options.password);
