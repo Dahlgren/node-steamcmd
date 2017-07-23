@@ -2,7 +2,7 @@
   "name": "steamcmd",
   "version": "0.0.0",
   "description": "Helper library for SteamCMD",
-  "main": "app.js",
+  "main": "src/steamcmd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
