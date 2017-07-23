@@ -17,6 +17,7 @@
   "dependencies": {
     "commander": "^2.2.0",
     "path-extra": "^0.3.0",
+    "tar": "^2.2.1",
     "tarball-extract": "0.0.3",
     "unzip": "~0.1.11"
   }
