@@ -49,7 +49,7 @@ Workshop ID can be found from the Workshop Page url.
 
 ## Module
 
-### install(options)
+### install(options, callback)
 
 | Option | Description |
 | --- | --- |
@@ -68,7 +68,3 @@ If both `applicationId` and `workshopId` are defined then the `workshopId` item 
 If any of them are omitted then `anonymous` user will be used instead.
 
 If `platform` is specified it will be used instead of the current OS platform. `steamGuardCode` is required for initial login if Steam Guard is enabled.
-
-# TODO
-
-* Callback on install

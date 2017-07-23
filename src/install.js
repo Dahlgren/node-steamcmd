@@ -46,7 +46,7 @@ function createArguments (options) {
   return args
 }
 
-function install (steamCmdPath, options) {
+function install (steamCmdPath, options, callback) {
   var process = childProcess.execFile(steamCmdPath, createArguments(options))
 
   process.stdout.on('data', function (data) {
@@ -59,6 +59,14 @@ function install (steamCmdPath, options) {
 
   process.on('close', function (code) {
     console.log('child process exited with code ' + code)
+
+    if (callback) {
+      if (code > 0) {
+        callback(new Error('steamcmd failed with status code ' + code))
+      } else {
+        callback(null)
+      }
+    }
   })
 }
 
