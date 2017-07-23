@@ -5,8 +5,8 @@ var env = require('./env')
 var install = require('./install')
 
 function steamCmdInstall (options) {
-  fs.access(env.executable(), fs.constants.X_OK, function (exists) {
-    if (exists) {
+  fs.access(env.executable(), fs.constants.X_OK, function (accessError) {
+    if (!accessError) {
       install(env.executable(), options)
     } else {
       console.log('SteamCmd needs to be installed')
