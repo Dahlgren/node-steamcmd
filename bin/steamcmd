@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-var program = require('commander');
+var program = require('commander')
 
-var steamcmd = require('../src/steamcmd');
+var steamcmd = require('../src/steamcmd')
 
 program
   .option('-u, --username [value]', 'Steam Username')
@@ -10,20 +10,20 @@ program
   .option('--path [value]', 'Install Path instead of CWD')
   .option('--platform [value]', 'Install application for specific OS')
   .option('--steamGuardCode [value]', 'Code for steam guard')
-  .parse(process.argv);
+  .parse(process.argv)
 
-var args = program.args;
+var args = program.args
 
 if (!args.length) {
-  console.error('app id required');
-  process.exit(1);
+  console.error('app id required')
+  process.exit(1)
 }
 
-var appId = args[0];
-var workshopId = args[1];
+var appId = args[0]
+var workshopId = args[1]
 
 if (!program.path) {
-  program.path = process.cwd();
+  program.path = process.cwd()
 }
 
 steamcmd.install({
@@ -34,4 +34,4 @@ steamcmd.install({
   platform: program.platform,
   steamGuardCode: program.steamGuardCode,
   workshopId: workshopId
-});
+})
