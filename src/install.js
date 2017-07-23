@@ -31,8 +31,13 @@ function createArguments(options) {
   }
 
   // App id to install and/or validate
-  if (options.applicationId) {
+  if (options.applicationId && !options.workshopId) {
     args.push('+app_update ' + options.applicationId + ' validate');
+  }
+
+  // Workshop id to install and/or validate
+  if (options.applicationId && options.workshopId) {
+    args.push('+workshop_download_item ' + options.applicationId + ' ' + options.workshopId);
   }
 
   // Quit when done

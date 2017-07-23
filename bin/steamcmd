@@ -12,14 +12,15 @@ program
   .option('--steamGuardCode [value]', 'Code for steam guard')
   .parse(process.argv);
 
-var appIds = program.args;
+var args = program.args;
 
-if (!appIds.length) {
+if (!args.length) {
   console.error('app id required');
   process.exit(1);
 }
 
-var appId = appIds[0];
+var appId = args[0];
+var workshopId = args[1];
 
 if (!program.path) {
   program.path = process.cwd();
@@ -32,4 +33,5 @@ steamcmd.install({
   password: program.password,
   platform: program.platform,
   steamGuardCode: program.steamGuardCode,
+  workshopId: workshopId
 });

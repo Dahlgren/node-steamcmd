@@ -28,7 +28,7 @@ Commands are executed with current working directory as folder
 ### Install application
 
 ```
-Usage: steamcmd [options] [appid]
+Usage: steamcmd [options] [appid] [workshopid]
 
 Options:
 
@@ -40,7 +40,12 @@ Options:
   --steamGuardCode [value]  Code for steam guard
 ```
 
-Install one application with desired app id. All app ids can be found at  https://developer.valvesoftware.com/wiki/Steam_Application_IDs
+If only `applicationId` is defined the desired application will be installed to defined `path`.
+If both `applicationId` and `workshopId` are defined then the `workshopId` item for that application will be downloaded using the standard Steam workshop directory structure to `path`.
+
+All app ids can be found at  https://developer.valvesoftware.com/wiki/Steam_Application_IDs
+
+Workshop ID can be found from the Workshop Page url.
 
 ## Module
 
@@ -54,8 +59,15 @@ Install one application with desired app id. All app ids can be found at  https:
 | platform | Specific platform to install if other than current |
 | steamGuardCode | Code required for Steam Guard |
 | username | Steam Account Username |
+| workshopId | Workshop Id to install for the defined Application Id |
 
-Install the specified `applicationId` to `path` using supplied `username` and `password`. If any of them are null then `anonymous` will be used as username. If `platform` is specified it will be used instead of the current OS platform. `steamGuardCode` is required for initial login if Steam Guard is enabled.
+If only `applicationId` is defined the desired application will be installed to defined `path`.
+If both `applicationId` and `workshopId` are defined then the `workshopId` item for that application will be downloaded using the standard Steam workshop directory structure to `path`.
+
+`username` and `password` will be used to login.
+If any of them are omitted then `anonymous` user will be used instead.
+
+If `platform` is specified it will be used instead of the current OS platform. `steamGuardCode` is required for initial login if Steam Guard is enabled.
 
 # TODO
 
