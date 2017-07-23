@@ -24,6 +24,9 @@ function download (callback) {
     } else if (platform === 'win32') {
       http.get(url, function (res) {
         res.pipe(unzip.Extract({ path: env.directory() }))
+          .on('error', function (err) {
+            callback(err)
+          })
           .on('close', function () {
             callback(null)
           })
