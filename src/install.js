@@ -26,8 +26,8 @@ function createArguments (options) {
   }
 
   // Installation directory
-  if (options.installPath) {
-    args.push('+force_install_dir "' + options.installPath + '"')
+  if (options.path) {
+    args.push('+force_install_dir "' + options.path + '"')
   }
 
   // App id to install and/or validate

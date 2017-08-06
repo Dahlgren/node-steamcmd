@@ -28,7 +28,7 @@ if (!program.path) {
 
 steamcmd.install({
   applicationId: appId,
-  installPath: program.path,
+  path: program.path,
   username: program.username,
   password: program.password,
   platform: program.platform,
