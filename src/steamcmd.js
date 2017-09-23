@@ -5,7 +5,7 @@ var env = require('./env')
 var install = require('./install')
 
 function steamCmdInstall (options, callback) {
-  fs.access(env.executable(), fs.constants.X_OK, function (accessError) {
+  fs.access(env.executable(), (fs.constants || fs).X_OK, function (accessError) {
     if (!accessError) {
       install(env.executable(), options, callback)
     } else {
