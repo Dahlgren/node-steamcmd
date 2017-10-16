@@ -21,6 +21,8 @@ function createArguments (options) {
   // Authentication
   if (options.username && options.password) {
     args.push('+login ' + options.username + ' ' + options.password)
+  } else if (options.username) {
+    args.push('+login ' + options.username)
   } else {
     args.push('+login anonymous')
   }
