@@ -19,7 +19,7 @@
     "commander": "^2.2.0",
     "path-extra": "^0.3.0",
     "tarball-extract": "0.0.6",
-    "unzip": "~0.1.11"
+    "unzipper": "^0.10.5"
   },
   "devDependencies": {
     "standard": "^10.0.2"
