@@ -2,7 +2,7 @@ var http = require('http')
 var os = require('os')
 var path = require('path-extra')
 var tarball = require('tarball-extract')
-var unzip = require('unzip')
+var unzip = require('unzipper')
 
 var env = require('./env')
 
